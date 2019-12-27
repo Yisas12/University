@@ -1,0 +1,3 @@
+# University
+This repository is about projects or exercises I had to do in the university form different subjects 
+like Algorithmics, Programming Technology, Databases...
