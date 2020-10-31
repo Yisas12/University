@@ -1,0 +1,19 @@
+sudo su
+# dd if=/dev/zero of=/tmp/disk.img count=120000
+mkfs -t ext3 -b 1024 /tmp/disk.img
+mkdir punto_montaje
+mount -t ext3 -o loop /tpm/disk.img punto_montaje/
+cd punto_montaje
+touch hola.txt
+vi hola.txt
+cd -
+umount punto_montaje
+rm -rf punto_montaje
+mkdir punto_montaje2
+touch fichero
+mount...
+
+
+1-Montamos sf myfs en /punto_montaje
+2-Escribir: echo "Hola" >/punto__montaje/hola.txt
+leer: cat /punto_montaje/hola.txt

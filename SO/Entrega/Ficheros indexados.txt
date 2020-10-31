@@ -1,0 +1,14 @@
+La tabla de i-nodos contiene i-nodos que desciben a un fichero
+Los i-nodos contienen (en una tabla) información del archivo (fecha de creación, permisos, propietario del fichero...), el nombre no se almacena en el i-nodo
+sino que se almacena en el directorio en el que hay solo nombres e i-nodos. En fat no es viable pq tendrías que recorrer todos los ficheros para encontrarlo y cambiarlo.
+
+La segunda parte de la tabla son los correspondientes a los indices de datos, en los que almacenamos (en una primera zona) indices directos, el nº de enlaces directos de
+un i-nodo los elegimos nosotros. Un indice directo es un entero (el primer bloque en disco que almacena los datos del fichero es el primero que esté en esta parte 
+de la tabla). En una segunda zona tenemos el indirecto simple que apunta a un bloque de conjuntos de puntero que apuntan a otras casillas de la super tabla. Otra
+zona es la indirecto doble, que apunta a un bloque de punteros de la super tabla y que este puntero apunta a otro bloque de punteros. Otra zona, indirecto triple...
+
+int fd: open ("hola.txt", O_WRONGLY/O_RDONLY);
+lseek(fd, 0, seek_end); //mueve el puntero donde tu le pongas(seek_end)
+write(fd, 'donde está el fichero'(inodo)); //esto es un puntero a la tabla de i-nodos
+Hay una tabla de i-nodos en el que están las descripciones de los ficheros, que es donde apunta el write.
+Contador: sirve para ver cuántas veces 

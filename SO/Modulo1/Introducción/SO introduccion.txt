@@ -1,0 +1,48 @@
+//Introducción a C
+
+#include<stdio.h> ------> archivo de cabecera, texto, no binario pq solo tiene los prototipos de funciones.
+
+int main(void)
+{
+	printf("Hola mundo\n");
+	return 0;
+}
+
+Lectura (r)
+Escritura (w)
+Ejecución (x)
+
+rwx(propietario) rwx(grupo) r-x(resto)
+
+
+strcpy --> copiar
+strlen --> longitud
+strcmp --> compare
+
+Para saber el numero de bytes que ocupa lo que sea, sizeof()
+
+a=malloc(sizeof(int))->reserva bytes de memoria y devuelve la dirección 
+a la que apuntan los bytes reservados. (mirar manual si no te aclaras).
+
+Para liberar memoria: free(nombre de la variable)
+No se puede suponer que se puede reservar la memoria.
+
+Programa correcto:
+int *a;
+a = malloc(sizeof(int));
+if(a == null)
+{
+	...
+	return -1;
+}
+
+Las variables locales se almacenan en la pila de su función mientras que 
+las globales se almacenan en un espacio reservado en la imagen de memoria del proceso en 
+ejecución y duran toda la vida del programa.
+
+Compilar y enlazar -o
+Compilar -c
+Ej: gcc suma.c -c
+gcc dept.c -c
+gcc suma.o dept.o -o test (no funcionaría pq falta suma.o)
+

@@ -1,0 +1,90 @@
+1.Llamadas al sistema
+	-Abrir fichero: open
+	-Cerrar fichero: close
+	-Escritura/lectura: write(de ram a disco)/read(de disco a ram) 
+de disco a disco es: disco->read ram->write disco.
+	-Posicionamiento/desplazamiento: lseek
+	
+2.Funciones de biblioteca:
+	-Abrir: fopen
+	-Cerrar: fclose
+
+origen.txt -> destino.c
+
+1.Open (while:)
+2. a: leer un carácter (Origen)
+b: Almacenando carácter RAM
+c: Escribir a destino
+3.Close
+
+int open (descriptor de fichero)
+
+Nuestro programa empezará ---forma estática----:
+int origen, destino;
+char c;
+origen = open("origen.txt", O_RDONLY); (puedes no tener permiso para abrirlo o no existir)
+if(origen == -1)
+{
+	//error
+}
+destino = open("destino.txt", O.WRONGLY|O.TRUNC|O.CREAT, 0744);
+
+(O.WRONGLY: escribe)
+(O.TRUNC se pone al principio del fichero pero borra lo que hay en él)
+(O.CREATE: crea el fichero en caso de que no exista)
+(0744: permisos que le damos al fichero antes de crearlo, rwx (111 o 100 o 100) que es 0744)
+
+Después de abrir hay que leer:
+disco -> ram
+fichero -> buffer
+
+while(read(origen, &c, sizeof(char)) > 0) //leemos desde origen y almacenamos en la dirección de c el tamaño del char en bytes
+{
+	write(destino, &c, sizeof(char));
+}
+close(origen);
+close(destino);
+
+------Si se declara de forma dinámica-------
+char *c
+int elementos;
+
+c= malloc((elementos*)sizeof(char)); //elementos declarados de forma dinámica
+|
+|
+|
+|
+free(c);
+
+Tarea: utilizar fopen, fclose, (read)fgetc, (write)fputc ld_library_path
+
+bash=shell script= script
+Cambiar ficheros: chmod -> 0777 ->
+u	r
+g + -   w
+o	x
+ejemplos: u + x, u - r, g + rwx
+
+Si definimos variable en la misma linea de la ejecucion del programa, esta
+pasa a ser del entorno de la ejecución del programa
+b=45 ./miscript.sh
+
+Para hacerlo en diferentes líneas: 
+export b=45
+./miscript
+
+comando > fichero (de comando a fichero)
+comando < fichero (de fichero a comando)
+
+ls -l > salida.txt (redireccionar la entrada a un determinado fichero)
+	<	(desde un determinado fichero)
+
+read(0, ..) se bloquea hasta que escribes
+write(1, ..) muestra por pantalla
+write(2,..) muestra por pantalla los errores.
+
+compila.sh:
+1.Compila el programa
+2.Si ha habido error en compilación -> vuelca error en fichero error.txt
+3.Si no ejecuta el programa
+4.Muestra el estado de terminación del programa

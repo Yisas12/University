@@ -1,0 +1,26 @@
+Para mirar los procesos que hay en ejecución: ps -aux o top (son como admin de tareas)
+Si tenemos un fichero ejecutable, lo ejecutamos y, antes de que termine lo volvemos
+a ejecutar, se crean dos procesos (que podemos ver con las instrucciones dichas
+anteriormente).
+Si uno abre un fichero, el otro no lo tiene abierto, lo tiene que abrir cada uno.
+
+fork(): el pid del hijo siempre es 0, el pid del padre es el identificador del hijo.
+
+Para que el padre tenga dos hijos: 
+int main(void){
+int pid;
+pid = fork();
+if(pid!= 0) fork();
+}
+
+No se puede hacer:
+pid = fork()
+pid = fork()
+porque, además de crear otro hijo al padre, también le crearías un hijo al hijo
+debido a que la ejecución del padre e hijo empiezan en el primer fork; entonces
+para que se creen dos hijos en el padre pero no un hijo al hijo, se pone el if.
+
+Si quieres obtener pid del proceso en el que estás => getpid(), si quieres el 
+pid del padre => getppid()
+
+

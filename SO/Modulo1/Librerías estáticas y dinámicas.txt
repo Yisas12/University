@@ -1,0 +1,77 @@
+Creación de una librería estática
+Supongamos que disponemos de los ficheros fich1.c y fich2.c que contienen el código de las funciones que deseamos incluir en la librería libfich.a. Para obtener los ficheros objeto compilamos como siempre:
+
+   $ gcc -c -o fich1.o fich1.c 
+	
+y
+
+   $ gcc -c -o fich2.o fich2.c 
+	
+A continuación empaquetamos los ficheros obtenidos con ar (un empaquetador similar a tar).
+
+   $ ar rcs libfich.a fich1.o fich2.o
+	
+El significado de las opciones que se le dan a ar es el siguiente:
+
+Table 1.
+
+s	construir un índice del contenido.
+c	crear el paquete si no existe.
+r	reemplazar los ficheros si ya existían en el paquete.
+Otras opciones de ar que pueden resultar útiles son:
+
+Table 2.
+
+t	lista el contenido de un paquete (o librería).
+x	extrae un fichero de un paquete (o librería).
+
+
+Creación de una librería dinámica
+Cuando se crea un objeto dinámico es necesario que dicho código objeto sea independiente de la posición, para conseguir este tipo de código debe especificarse al compilador la opción -fPIC (Position Independent Code). Dicho flag debe indicarse tanto en la compilación como en el montaje de la librería.
+
+   $ gcc -fPIC -c -o fich1.o fich1.c
+   $ gcc -fPIC -c -o fich2.o fich2.c
+	
+Para montar los objetos es necesario además indicar la opción -shared para que el resultado sea un fichero objeto 'compartible'.
+
+   $ gcc -shared -fPIC -o libfich.so fich1.o fich2.o
+	
+Para compilar la librería dinámica puede utilizarse un makefile como este:
+
+   CC=gcc
+   CFLAGS=-Wall -ggdb -fPIC
+   LDFLAGS=-fPIC -shared
+
+   libfich.so: fich1.o fich2.o
+      $(CC) $(LDFLAGS) -o $@ $^
+	
+En este caso, la librería tiene como extensión .so que significa shared object.
+
+Estaticas
+
+Crear los ficheros objero (.o) a partir de nuestro codigo fuente (.c)
+gcc -c fuente.c -o fuente.o
+
+Crear las librerías (.a)
+ar -rv libnombre.a fuente1.o fuente2.o … fuenten.o
+
+Dinámicas
+
+Crear los ficheros objeto
+gcc -c fuente.c -o fuente.o
+
+Crear las librerias dinamicas
+ld -o liblibreria.so objeto1.o objeto2.o … -shared
+
+
+Por el profesor:
+Estática:
+ar (archivo) rcs(parámetros que entiende ar) mibiblioteca.a suma.o (se crea biblioteca si existe suma.o)
+
+Dinámica:
+la extensión es una convención para aclararnos nosotros de algo
+
+gcc -shared suma.o biblioteca.so
+
+gcc -shared suma.o libbiblioteca.so
+(enlazar) gcc test.o -lbiblioteca -o test
