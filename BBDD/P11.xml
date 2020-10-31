@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alojamientos [
+<!ELEMENT alojamientos (alojamiento)+>
+<!ELEMENT alojamiento (cif, direccion, telefono, habitaciones?)>
+<!ELEMENT habitaciones (habitacion)+>
+<!ELEMENT habitacion (precio, estado)>
+<!ELEMENT precio (#PCDATA)> 
+<!ATTLIST alojamiento tipo (hotel | hostal | casarural) #REQUIRED>
+<!ATTLIST habitacion id CDATA #REQUIRED>
+<!ATTLIST estado est CDATA #REQUIRED>
+]>
+<alojamientos>
+	<alojamiento tipo="hotel">
+		<cif>N132564</cif>
+		<direccion>calle caca</direccion>
+		<telefono>618456789</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>20</precio>
+				<estado est="l">libre</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>80000</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+			<habitacion id="007">
+				<precio>88800</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+
+	<alojamiento tipo="hostal">
+		<cif>N132565</cif>
+		<direccion>calle pera</direccion>
+		<telefono>698745632</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>465</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>2</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+
+	<alojamiento tipo="hotel">
+		<cif>N5467892135456879546213</cif>
+		<direccion>calle coronosa</direccion>
+		<telefono>541263987</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>20</precio>
+				<estado est="l">libre</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>80000</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+
+	<alojamiento tipo="casarural">
+		<cif>N132879</cif>
+		<direccion>calle rural</direccion>
+		<telefono>612345769</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>780</precio>
+				<estado est="l">libre</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>80001</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+
+	<alojamiento tipo="hostal">
+		<cif>N132500</cif>
+		<direccion>calle hostal</direccion>
+		<telefono>600005632</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>465</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>2</precio>
+				<estado est="o">ocupada</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+
+	<alojamiento tipo="casarural">
+		<cif>N1000001</cif>
+		<direccion>calle rurarosa</direccion>
+		<telefono>605050505</telefono>
+		<habitaciones>
+			<habitacion id="001">
+				<precio>780</precio>
+				<estado est="l">libre</estado>
+			</habitacion>
+			<habitacion id="002">
+				<precio>80001</precio>
+				<estado est="l">libre</estado>
+			</habitacion>
+		</habitaciones>
+	</alojamiento>
+</alojamientos>

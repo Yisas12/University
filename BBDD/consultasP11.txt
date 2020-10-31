@@ -1,0 +1,46 @@
+1. Consulta tipo = hoteles
+for $x in //alojamiento
+let $b := $x
+where every $b in $x satisfies $b/@tipo = "hotel"
+return <resultado>
+<nombre>{data($b/cif)}</nombre>
+<telefono>{data($b/telefono)}</telefono>
+</resultado>
+
+2. Consulta tipo = hoteles y contar habitaciones
+for $x in //alojamiento
+let $b := $x
+where every $b in $x satisfies $b/@tipo = "hotel"
+return <resultado>
+<nombre>{data($b/cif)}</nombre>
+<numHabitaciones>{count($b/habitaciones/habitacion)}</numHabitaciones>
+</resultado>
+
+3. Consulta tipo = hoteles y minPrecio maxPrecio
+for $x in //alojamiento
+let $b := $x
+where every $b in $x satisfies $b/@tipo = "hotel"
+return <resultado>
+<nombre>{data($b/cif)}</nombre>
+<minPrecio>{min($b/habitaciones/habitacion/precio)}</minPrecio>
+<maxPrecio>{max($b/habitaciones/habitacion/precio)}</maxPrecio>
+</resultado>
+
+4. Consulta tipo = hoteles y habitaciones libres
+
+for $x in //alojamiento
+let $b := $x
+where every $b in $x satisfies $b/@tipo = "hotel" and $b/habitaciones/habitacion/estado/@est = "l"
+return <resultado>
+<nombre>{data($b/cif)}</nombre>
+<telefono>{data($b/telefono)}</telefono>
+</resultado>
+
+BONUS 5. Consulta tipo cualquiera con TODAS las habitaciones libres, ojo con $b, son habitaciones ahora
+for $x in //alojamiento
+let $b := $x/habitaciones/habitacion
+where every $b in $x/habitaciones/habitacion satisfies $b/estado/@est = "l"
+return <resultado>
+<nombre>{data($x/cif)}</nombre>
+<telefono>{data($x/telefono)}</telefono>
+</resultado>

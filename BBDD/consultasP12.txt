@@ -1,0 +1,28 @@
+1. Consulta origen Madrid
+for $x in //linea
+where $x/@origen = "Madrid"
+return <vuelo-Madrid><num>{data($x/numero)}</num></vuelo-Madrid>
+
+2. Consulta numero asientos origen Madrid
+for $x in //linea
+where $x/@origen = "Madrid"
+return <vuelo-Madrid><num>{data($x/numero)}</num><asientos>{count(data($x/asientos/asiento))}</asientos></vuelo-Madrid>
+
+3. Consulta plazas libres origen Madrid
+for $x in //linea
+let $b := $x
+where every $b in $x satisfies $b/@origen = "Madrid" and $b/asientos/asiento/@estado = "libre"
+return <vuelo-Madrid><num>{data($b/numero)}</num></vuelo-Madrid>
+
+4. Consulta plazas libres origen Madrid y las lista
+for $x in //linea
+let $b := $x
+where every $b in $x satisfies $b/asientos/asiento/@estado = "libre"
+return <vuelo><num>{data($b/numero)}</num><plazas-libres>{for $a in $b/asientos/asiento where $a/@estado = "libre" return <asiento>{data($a)}</asiento>}</plazas-libres></vuelo>
+
+//extra
+5. Consulta de plazas libres en los aviones
+for $x in //linea
+let $b := $x
+where some $b in $x satisfies $b/asientos/asiento/@estado = "libre"
+return <vuelo><num>{data($b/numero)}</num></vuelo>

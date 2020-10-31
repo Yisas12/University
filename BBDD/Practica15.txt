@@ -1,0 +1,6 @@
+1. edad(X, E) , E > 17
+2. padre(X,Y))
+3. hermanos(X,Y) :- hijo(Z,Y), hijo(Z,X), X \= Y
+4. hermana(X,Y) :- hijo(Z,Y), hijo(Z,X), mujer(Y), X \= Y
+5. hermano(X,Y) :- hijo(Z,Y), hijo(Z,X), hombre(Y), X \= Y
+6. tio(X,Y) :- hijo(Z,X), hijo(Z,M), hijo(Y,M)

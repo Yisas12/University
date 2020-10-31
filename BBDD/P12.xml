@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lineas [
+<!ELEMENT lineas (linea)+>
+<!ELEMENT linea (numero, asientos)>
+<!ELEMENT asientos (asiento)+>
+<!ELEMENT numero (#PCDATA)> 
+<!ELEMENT asiento (#PCDATA)> 
+<!ATTLIST linea origen CDATA #REQUIRED>
+<!ATTLIST linea destino CDATA #REQUIRED>
+<!ATTLIST asiento estado CDATA #REQUIRED>
+]>
+<lineas>
+	<linea origen="Madrid" destino="Marruecos">
+		<numero>1234</numero>
+		<asientos>
+			<asiento estado="ocupado">5</asiento>
+			<asiento estado="ocupado">6</asiento>
+			<asiento estado="libre">7</asiento>
+			<asiento estado="ocupado">8</asiento>
+		</asientos>
+	</linea>
+
+	<linea origen="Barcelona" destino="Madrid">
+		<numero>1235</numero>
+		<asientos>
+			<asiento estado="libre">5</asiento>
+			<asiento estado="ocupado">10</asiento>
+			<asiento estado="libre">7</asiento>
+			<asiento estado="ocupado">8</asiento>
+		</asientos>
+	</linea>
+
+	<linea origen="Toledo" destino="Ciudad Real">
+		<numero>1278</numero>
+		<asientos>
+			<asiento estado="ocupado">5</asiento>
+			<asiento estado="ocupado">10</asiento>
+			<asiento estado="ocupado">1</asiento>
+			<asiento estado="ocupado">8</asiento>
+		</asientos>
+	</linea>
+</lineas>

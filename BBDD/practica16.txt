@@ -1,0 +1,6 @@
+Práctica 16
+1. Libros(Titulo, ISBN) :- Libros(Titulo, ISBN, Autor, Tema, Anyo, Editorial, Precio, Unidades), Autor = "Cervantes".
+2. Libros(Titulo, ISBN) :- Libros(Titulo, ISBN, Autor, Tema, Anyo, Editorial, Precio, Unidades), Precio > 40.
+3. Libros(Titulo, ISBN) :- Libros(Titulo, ISBN, Autor, Tema, Anyo, Editorial, Precio, Unidades), Unidades < 40.
+4. Libros(Titulo, ISBN) :- Libros(Titulo, ISBN, Autor, Tema, Anyo, Editorial, Precio, Unidades), Anyo < 1980.
+5. Libros(Titulo) :- 

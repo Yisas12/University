@@ -1,0 +1,39 @@
+1.
+for $x in //lineas
+return <vuelo-Madrid>
+{for $linea in $x/linea
+where $linea[@origen="Madrid"]
+return <num>{data($linea/numero)}</num>}
+</vuelo-Madrid>
+
+2.
+<vuelo-Madrid>{for $x in //linea
+where $x[@origen="Madrid"]
+return
+(
+ <num>{data($x/numero)}</num>,
+<asientos>{count(data($x//asiento))}</asientos>
+)
+}</vuelo-Madrid>
+
+3.
+<vuelo-Madrid>{for $x in //linea
+where some $asiento in $x//asiento satisfies $asiento[@estado="libre"]
+return
+(
+ <num>{data($x/numero)}</num>
+)
+}</vuelo-Madrid>
+
+4.
+<vuelo-Madrid>{for $x in //linea
+return
+(
+ <num>{data($x/numero)}</num>,
+<plazas-libres>
+{for $sit in $x//asiento
+where $sit[@estado="libre"]
+return <asiento>{data($sit)}</asiento>
+}</plazas-libres>
+)
+}</vuelo-Madrid>

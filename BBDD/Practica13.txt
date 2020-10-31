@@ -1,0 +1,49 @@
+Practica 13
+
+1. use videoclub; //inicializo bbdd
+2. db.videoclub.createCollection("películas"); //creo colección peliculas
+
+//inserto algunas películas
+3. db.peliculas.insert({"Titulo": "Iron Man", "Año estreno": 2010, "Actores": "Yo", "Género": "Acción"});
+db.peliculas.insert({"Título": "Transformers", "Año estreno": 2012, "Actores":["Bumblebee", "Optimus Prime"], "Género": "Acción"});
+db.peliculas.insert({"Título": "Matrix", "Año estreno": 2015, "Actores": "Ni idea", "Género": "Acción"});
+db.peliculas.insert({"Título": "Avengers", "Año estreno": 2018, "Actores": "Mi hermano", "Género": "Acción"});
+
+//realizo actualización de peliculas
+4. var dvd = db.peliculas.findOne({"Titulo", "Matrix"});
+dvd.tipo = ({"tipo", "dvd"});
+db.peliculas.update({"Titulo", "Matrix"}, dvd);
+
+--------------------ASI-------------------------------
+db.peliculas.update({"Titulo", "Matrix"}, {"$set":{"Tipo":"DVD"}});
+
+//insertamos libro
+5. db.peliculas.insert({"Titulo": "Constantinopla", "Tipo": "Libro", "Capítulos": 12, "Leídos": 3});
+
+//incrementamos en 5 leídos
+6. db.peliculas.update({"Titulo": "Constantinopla"}, {"$inc": {"Leídos": 5}});
+
+//actualizamos género de matrix por ciencia ficción
+7. db.peliculas.update({"Titulo": "Matrix"}, {"$set": {"Género": "Ciencia ficción"}});
+
+//añadimos a los actores de matrix un array con Antonio Banderas y Brad Pitt (si no existe el campo, lo crea)
+8. db.peliculas.update({"Titulo": "Matrix"}, {"$push": {"Actores": {"$each": ["Antonio Banderas", "Brad Pitt"]}}});
+
+//lo mismo con Joe Pantoliano y Natalie Portman
+9. db.peliculas.update({"Titulo": "Matrix"}, {"$push": {"Actores": {"$each": ["Joe Pantoliano", "Natalie Portman"]}}});
+
+//actualizamos matrix eliminando primer y último actor
+10. db.peliculas.update({"Titulo": "Matrix"}, {"$pop": {"Actores": -1}}); //primero
+db.peliculas.update({"Titulo": "Matrix"}, {"$pop": {"Actores": 1}}); //último
+
+//actualizamos añadiendo a matrix actores Joe Pantoliano y Antonio Banderas
+11. db.peliculas.update({"Titulo": "Matrix"}, {"$push": {"Actores": {"$each": ["Joe Pantoliano", "Antonio Banderas"]}}});
+
+//Actualizamos matrix eliminando Joe Pantoliano y Antonio Banderas
+12. db.peliculas.update({"Titulo": "Matrix"}, {"$pull": {"Actores": {"$each": ["Joe Pantoliano", "Antonio Banderas"]}}}); //no se si se puede hacer así con los dos
+
+//insertamos disco
+13. db.peliculas.insert({"Titulo": "El atardecer", "Canción": 5, "Longitud": "6:50"});
+
+//Actualizamos para que haya 3 canciones en vez de 5
+14. db.peliculas.update({"Titulo": "El atardecer"}, {"Canción": 3});

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE planetas [
+<!ELEMENT planetas (planeta)+>
+<!ELEMENT planeta (nombre, diametro, masa, satelites?)>
+<!ELEMENT satelites (satelite)+>
+<!ELEMENT satelite (nombre)>
+]>
+<planetas>
+<planeta>
+<nombre>jesus</nombre>
+<diametro>20</diametro>
+<masa>80</masa>
+<satelites>
+<satelite>
+<nombre>poti</nombre>
+</satelite>
+<satelite>
+<nombre>jin</nombre>
+</satelite>
+</satelites>
+</planeta>
+
+<planeta>
+<nombre>Paula</nombre>
+<diametro>5</diametro>
+<masa>1</masa>
+<satelites>
+<satelite>
+<nombre>Camila</nombre>
+</satelite>
+<satelite>
+<nombre>Begonia</nombre>
+</satelite>
+</satelites>
+</planeta>
+
+</planetas>

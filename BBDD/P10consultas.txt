@@ -1,0 +1,9 @@
+Consulta 1:
+for $x in //planeta
+where $x/masa > 1
+return $x/nombre
+
+Consulta 2:
+for $x in //planeta
+return <resultado><plan>{data($x/nombre)}</plan>{for $a in $x/satelites/satelite/nombre
+return <nom>{data($a)}</nom>}</resultado>
