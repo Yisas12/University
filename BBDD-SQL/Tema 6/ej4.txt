@@ -1,0 +1,69 @@
+Create table Autor (
+DNI CHAR(9) PRIMARY KEY,
+Nombre VARCHAR(50) NOT NULL,
+Apellido VARCHAR(50) NOT NULL
+Pais VARCHAR(30) NOT NULL
+NumArticulos NUMBER(3,0) NOT NULL
+);
+
+Create table Revista (
+ISSN VARCHAR(9) PRIMARY KEY,
+Nombre VARCHAR(100) NOT NULL
+);
+
+Create table Articulo (
+DOI CHAR(30) PRIMARY KEY,
+Titulo VARCHAR(100) NOT NULL,
+ISSNRevista VARCHAR(9) NOT NULL REFERENCES Revista(ISSN)
+ON DELETE CASCADE,
+NumAutores NUMBER(1,0) NOT NULL,
+CHECK NumAutores BETWEEN 1 AND 4
+);
+
+Create table Firma (
+DNI CHAR(9) NOT NULL REFERENCES Autor,
+DOI CHAR(30) NOT NULL REFERENCES Articulo ON DELETE CASCADE,
+PRIMARY KEY (DNI, DOI)
+);
+
+insert into Autor values ('000000001', 'Jesus', 'Cencerrado', 'Esssspaña', 3);
+insert into Autor values ('000000002', 'Sergio', 'Moran', 'Esssspaña', 4);
+insert into Autor values ('000000001', 'Ivan', 'Fernandez', 'Esssspaña', 3);
+insert into Revista values ('12345678A', 'El corason');
+insert into Revista values ('12345678B', 'Hola caracola');
+
+create or replace procedure Nombre (name in varchar) is
+cursor revista is
+select distinct r.ISSN, r.Nombre, a.Nombre, a.Apellido from Revista r natural join Autor a 
+
+exception
+when no_data_found then
+DBMS_OUTPUT.PUT_LINE('No tiene autores');
+end;
+/
+
+create or replace trigger actNumAutores
+after insert or delete
+on Autor
+for each row
+
+begin 
+if inserting then update Articulo set numAutores = numAutores + 1;
+elsif deleting then update Articulo set numAutores = numAutores - 1;
+end if;
+end;
+/ 
+
+
+
+create or replace procedure menosSalario
+cursor pr is
+
+begin
+select em.nombre, em.salario from Empleados em join departamentos de on em.CodDept = de.CodDept
+where (select avg(ep.salario) from Empleados ep) > em.salario
+--group by de.CodDept;
+
+end;
+/
+

@@ -1,0 +1,62 @@
+CREATE TABLE Departamentos(
+CodDept CHAR(5) PRIMARY KEY,
+Nombre VARCHAR(100)
+);
+
+CREATE TABLE Empleados(
+DNI CHAR(9) PRIMARY KEY,
+Nombre VARCHAR(100),
+CodDept CHAR(5) REFERENCES Departamentos ON DELETE SET NULL,
+Salario NUMBER(4,0)
+);
+
+CREATE TABLE Cambios(
+IdCambio VARCHAR(10) PRIMARY KEY,
+Usuario VARCHAR(20),
+SalarioAnt NUMBER(4,0),
+SalarioNew NUMBER(4,0)
+);
+
+insert into Departamentos values ('A', 'Futbol');
+insert into Departamentos values ('B', 'Baloncesto');
+insert into Empleados values ('00000A', 'Juan Luis', 'A', 1700);
+insert into Empleados values ('00000B', 'Juan', 'A', 2000);
+insert into Empleados values ('00000C', 'Luis', 'B', 3200);
+insert into Empleados values ('00000D', 'Peter', 'A', 1100);
+insert into Empleados values ('00000E', 'Sergio', 'B', 4500);
+
+drop sequence seqcambios;
+create sequence seqcambios start with 1;
+
+create or replace trigger t 
+after insert or update of salario 
+on Empleados 
+for each row
+
+begin
+--if :old.salario != :new.salario then
+insert into Cambios values(seqcambios.nextval, user, :old.salario, :new.salario);
+--end if;
+end;
+/
+
+
+create or replace procedure menosSalario is
+cursor pr is select * from departamentos
+(cursor emp is
+    select em.nombre, em.salario from Empleados em 
+    where (select avg(ep.salario) from Empleados ep join departamentos dp on ep.CodDept = dp.CodDept) > em.salario);
+begin
+    for dept_1 in pr loop
+    DBMS_OUTPUT.PUT_LINE(dept_1.nombre);
+    for emp_1 in emp loop
+    DBMS_OUTPUT.PUT_LINE(dept_1.salario);
+    end loop;
+    end loop;
+    
+end;
+/
+
+begin
+menosSalario;
+end;

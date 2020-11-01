@@ -1,0 +1,62 @@
+CREATE TABLE Contratos(
+Referencia VARCHAR(10) PRIMARY KEY,
+Empresa VARCHAR(100),
+Fecha DATE,
+NumTrayectos NUMBER(2,0)
+);
+CREATE TABLE Trayectos(
+Referencia VARCHAR(10) REFERENCES Contratos ON DELETE CASCADE,
+Origen VARCHAR(50),
+Destino VARCHAR(50),
+Vehiculo VARCHAR(20),
+PRIMARY KEY (Referencia, Origen, Destino)
+);
+
+insert into Contratos values ('A0001', 'jinucm', '10-12-2018', 2);
+insert into Contratos values ('A0002', 'potism', '20-11-1998', 0);
+
+insert into Trayectos values ('A0001', 'china', 'espania', 'coche');
+insert into Trayectos values ('A0001', 'italia', 'japon', 'avion');
+insert into Trayectos values ('A0001', 'londres', 'francia', 'avion');
+
+select * from Contratos;
+select * from Trayectos;
+
+/
+create or replace procedure NumTrayectos (refer varchar2) is
+cont contratos.numtrayectos%type;
+begin
+select count(*) into cont from Trayectos t where t.referencia = refer
+group by t.referencia;
+
+update Contratos c set c.numtrayectos = cont where c.referencia = refer;
+exception
+ when no_data_found then
+    update Contratos c set c.numtrayectos = 0 where c.referencia = refer;
+   	DBMS_OUTPUT.PUT_LINE('No tiene trayectos atontao');
+
+end;
+
+/
+
+select count(*) from Trayectos t where t.referencia = 'A0001'
+group by t.referencia;
+/
+exec NumTrayectos('A0001');
+
+/
+delete from Trayectos where origen = 'china';
+
+create or replace trigger actualizaNumTrayectos
+after insert or delete
+on Trayectos
+for each row
+
+   
+begin
+   if inserting then  update Contratos set numTrayectos = numTrayectos + 1 where referencia = :new.referencia;
+   elsif deleting then  update Contratos set numTrayectos = numTrayectos - 1 where referencia = :old.referencia;
+   end if;
+   
+end;
+/
