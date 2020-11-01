@@ -1,0 +1,15 @@
+V3 8
+FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/divisor_new.vhd" 2018/10/03.09:36:28 P.15xf
+EN work/divisor 1538556100 \
+      FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/divisor_new.vhd" \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627
+AR work/divisor/rtl 1538556101 \
+      FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/divisor_new.vhd" \
+      EN work/divisor 1538556100 CP clk_1hz
+FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.vhd" 2018/10/03.10:41:37 P.15xf
+EN work/registro_siso 1538556102 \
+      FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.vhd" \
+      PB ieee/std_logic_1164 1335251622
+AR work/registro_siso/Behavioral 1538556103 \
+      FL "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.vhd" \
+      EN work/registro_siso 1538556102 CP divisor

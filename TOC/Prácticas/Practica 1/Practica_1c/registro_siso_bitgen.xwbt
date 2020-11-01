@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\14.1\ISE_Projects\UCM\Practica_1c\registro_siso.ncd
+OUTFILE=C:\Xilinx\14.1\ISE_Projects\UCM\Practica_1c\registro_siso.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\Xilinx\14.1\ISE_Projects\UCM\Practica_1c
+LICENSE=WebPack
+USER_INFO=211597574_0_0_217

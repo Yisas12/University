@@ -1,0 +1,73 @@
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf 
+bitgen -intstyle ise -f registro_siso.ut registro_siso.ncd 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf -ucf pines.ucf 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f registro_siso.ut registro_siso.ncd 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f registro_siso.ut registro_siso.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+xst -intstyle ise -ifn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.xst" -ofn "C:/hlocal/Nueva carpeta/TOC/Practica_1d/registro_siso.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf -ucf pines.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s1000-ft256-5 "registro_siso.ngc" registro_siso.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o registro_siso_map.ncd registro_siso.ngd registro_siso.pcf 
+par -w -intstyle ise -ol high -t 1 registro_siso_map.ncd registro_siso.ncd registro_siso.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml registro_siso.twx registro_siso.ncd -o registro_siso.twr registro_siso.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f registro_siso.ut registro_siso.ncd 

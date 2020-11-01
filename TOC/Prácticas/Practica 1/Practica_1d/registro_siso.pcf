@@ -1,0 +1,21 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Wed Oct 03 10:49:44 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ss" LOCATE = SITE "L5" LEVEL 1;
+COMP "ep<0>" LOCATE = SITE "P12" LEVEL 1;
+COMP "ep<1>" LOCATE = SITE "J1" LEVEL 1;
+COMP "ep<2>" LOCATE = SITE "H1" LEVEL 1;
+COMP "load" LOCATE = SITE "K3" LEVEL 1;
+COMP "ep<3>" LOCATE = SITE "H3" LEVEL 1;
+COMP "ep<4>" LOCATE = SITE "G2" LEVEL 1;
+COMP "ep<5>" LOCATE = SITE "K15" LEVEL 1;
+COMP "clk_100mhz" LOCATE = SITE "T9" LEVEL 1;
+COMP "ep<6>" LOCATE = SITE "K16" LEVEL 1;
+COMP "rst" LOCATE = SITE "K4" LEVEL 1;
+COMP "ep<7>" LOCATE = SITE "F15" LEVEL 1;
+NET "clk_100mhz_BUFGP/IBUFG" BEL "clk_100mhz_BUFGP/BUFG.GCLKMUX"
+        USELOCALCONNECT;
+SCHEMATIC END;
+

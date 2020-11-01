@@ -1,0 +1,15 @@
+V3 7
+FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/divisor_new.vhd 2018/10/01.19:36:55 P.15xf
+EN work/divisor 1538512474 \
+      FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/divisor_new.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627
+AR work/divisor/rtl 1538512475 \
+      FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/divisor_new.vhd \
+      EN work/divisor 1538512474 CP clk_1hz
+FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/registro_siso.vhd 2018/10/02.22:39:52 P.15xf
+EN work/registro_siso 1538512795 \
+      FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/registro_siso.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/registro_siso/Behavioral 1538512796 \
+      FL C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/registro_siso.vhd \
+      EN work/registro_siso 1538512795

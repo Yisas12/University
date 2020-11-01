@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/tb_registro_siso_isim_beh.exe" -prj "C:/Xilinx/14.1/ISE_Projects/UCM/Practica_1c/tb_registro_siso_beh.prj" "work.tb_registro_siso" 
