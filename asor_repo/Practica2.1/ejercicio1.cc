@@ -10,8 +10,7 @@ using namespace std;
 int main() {
 	if (setuid(2) == -1) {
 		perror("setuid no valido");
-		strerror(-1);
+		cout << (strerror(errno)) << "\n";
 	}
 	return 1;
 }
-
